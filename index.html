@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You ❤️</title>
+
+<title>Just For You ❤️</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,15 +18,38 @@
 
 <img src="anime.jpg" class="anime">
 
-<h1>Welcome 💕</h1>
+<h1>Hey Beautiful 🌸</h1>
 
-<button onclick="window.location.href='proposal.html'">
-💌 Click Here 💌
+<p class="subtitle">
+I made something special just for you...
+</p>
+
+<button class="main-btn" onclick="start()">
+💌 Click Here
 </button>
 
 </div>
 
+<div class="hearts"></div>
+
+<script>
+
+function start(){
+
+document.body.style.opacity="0";
+
+setTimeout(function(){
+
+window.location.href="proposal.html";
+
+},600);
+
+}
+
+</script>
+
 <script src="script.js"></script>
 
 </body>
+
 </html>
