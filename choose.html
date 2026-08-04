@@ -70,23 +70,116 @@ Choose what you'd like to do together.
 </div>
 
 <script>
-
 function submitDate(){
 
 const activity=document.getElementById("activity").value;
-
 const date=document.getElementById("date").value;
-
 const time=document.getElementById("time").value;
 
-localStorage.setItem("activity",activity);
-localStorage.setItem("date",date);
-localStorage.setItem("time",time);
+document.body.innerHTML=`
+<div class="container">
 
-window.location.href="success.html";
+<h1 style="color:#ff1493;">💖 Yay!! 💖</h1>
+
+<img src="anime.jpg" class="anime">
+
+<h2 style="color:#d63384;">Preparing your surprise... 🌸</h2>
+
+<div style="width:260px;height:20px;background:#ffd6e8;border-radius:20px;margin:30px auto;overflow:hidden;">
+
+<div id="bar" style="height:100%;width:0%;background:#ff4fa3;"></div>
+
+</div>
+
+</div>
+`;
+
+let progress=0;
+
+let loading=setInterval(function(){
+
+progress+=2;
+
+document.getElementById("bar").style.width=progress+"%";
+
+if(progress>=100){
+
+clearInterval(loading);
+
+document.body.innerHTML=`
+
+<div class="container">
+
+<img src="anime.jpg" class="anime">
+
+<h1 style="color:#ff1493;">💌 One Last Thing...</h1>
+
+<div style="background:white;padding:25px;border-radius:20px;max-width:450px;margin:auto;box-shadow:0 10px 25px rgba(0,0,0,.15);">
+
+<p style="color:#d63384;font-size:20px;line-height:1.8;">
+
+Dear You ❤️<br><br>
+
+Thank you for giving this little website a chance.
+
+It may just be a simple webpage, but every line was made with a smile.
+
+I'm really looking forward to spending time with you.
+
+No matter where we go...
+
+Movie 🍿
+
+Coffee ☕
+
+Lunch 🍕
+
+Or just a walk together...
+
+I know it'll be special because you'll be there.
+
+🌸 Thank you for saying YES.
+
+</p>
+
+<button onclick="sendWhatsApp()">
+
+💚 Continue to WhatsApp
+
+</button>
+
+</div>
+
+</div>
+`;
+
+window.activity=activity;
+window.date=date;
+window.time=time;
 
 }
 
+},40);
+
+}
+
+function sendWhatsApp(){
+
+const message=`💖 Hey!
+
+I accepted your invitation ❤️
+
+🎬 Activity: ${window.activity}
+
+📅 Date: ${window.date}
+
+🕒 Time: ${window.time}
+
+I'm looking forward to our date 🌸`;
+
+window.location.href="https://wa.me/918590660839?text="+encodeURIComponent(message);
+
+}
 </script>
 
 </body>
