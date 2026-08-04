@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Our Date ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.card{
+    background:rgba(255,255,255,.9);
+    padding:30px;
+    border-radius:25px;
+    max-width:500px;
+    width:90%;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(255,105,180,.3);
+}
+
+select,input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:10px;
+    border:2px solid pink;
+    font-size:16px;
+}
+
+button{
+    margin-top:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="anime.jpg" class="anime">
+
+<h1>❤️ Plan Our Date ❤️</h1>
+
+<p style="color:#d63384;">
+Choose what you'd like to do together.
+</p>
+
+<select id="activity">
+<option>🎬 Movie</option>
+<option>🍕 Lunch</option>
+<option>☕ Coffee</option>
+<option>🍦 Ice Cream</option>
+<option>🌅 Sunset Walk</option>
+<option>🎳 Bowling</option>
+<option>🧺 Picnic</option>
+<option>🎡 Amusement Park</option>
+<option>🎮 Arcade</option>
+<option>🍽️ Dinner</option>
+</select>
+
+<input type="date" id="date">
+
+<input type="time" id="time">
+
+<button onclick="submitDate()">
+💌 Send My Answer
+</button>
+
+</div>
+
+<script>
+
+function submitDate(){
+
+const activity=document.getElementById("activity").value;
+
+const date=document.getElementById("date").value;
+
+const time=document.getElementById("time").value;
+
+localStorage.setItem("activity",activity);
+localStorage.setItem("date",date);
+localStorage.setItem("time",time);
+
+window.location.href="success.html";
+
+}
+
+</script>
+
+</body>
+</html>
